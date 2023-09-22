@@ -21,7 +21,7 @@ package Automata;
  * @author Víctor M. Rodríguez y Fran J. Beltrán
  */
 public interface Proceso {
-    public abstract boolean esFinal(String estado); // True si estado es un estado final
-    public abstract boolean reconocer(String cadena) throws Exception; // True si la cadena es reconocida
+    public abstract boolean esFin(String estado); // True si estado es un estado final
+    public abstract boolean aceptarCadena(String cadena) throws Exception; // True si la cadena es reconocida
     public abstract String toString(); // Muestra las transiciones y estados finales
 }

@@ -144,7 +144,7 @@ public class AFD implements Cloneable, Proceso {
      * @return
      */
     @Override
-    public boolean esFinal(String estado) {
+    public boolean esFin(String estado) {
         return this.estadosFinales.contains(estado);
     }
 
@@ -200,7 +200,7 @@ public class AFD implements Cloneable, Proceso {
      * @throws java.lang.Exception Si el autómata no es válido
      */
     @Override
-    public boolean reconocer(String cadena) throws Exception {
+    public boolean aceptarCadena(String cadena) throws Exception {
         //CONTROL DE EXCEPCIONES
         if (this.estadoInicial.equals("")) {
             throw new Exception("Error: no ha indicado ningún estado inicial!");
@@ -219,7 +219,7 @@ public class AFD implements Cloneable, Proceso {
             }
         }
 
-        return esFinal(estado);
+        return esFin(estado);
     }
 
     /**
@@ -279,7 +279,7 @@ public class AFD implements Cloneable, Proceso {
         automata.setEstadoInicial("q0");
 
         try {
-            if (automata.reconocer("101")) {
+            if (automata.aceptarCadena("101")) {
                 System.out.println("RECONOCIDO");
             } else {
                 System.out.println("NO RECONOCIDO");

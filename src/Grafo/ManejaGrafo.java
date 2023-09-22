@@ -17,10 +17,10 @@
 package Grafo;
 
 import Automata.AFD;
-import Automata.AFND;
+import Automata.AutoFinNoDet;
 import Automata.TransicionAFD;
-import Automata.TransicionAFND;
-import Automata.TransicionL;
+import Automata.TransAutFinNDet;
+import Automata.TransLamda;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.swing.mxGraphComponent;
@@ -109,7 +109,7 @@ public class ManejaGrafo {
      * @return objeto mxGraphComponent para su representación gráfica
      * @throws Exception
      */
-    public mxGraphComponent generarAFND(AFND automata, HashSet<String> cjtoEstados) throws Exception {
+    public mxGraphComponent generarAFND(AutoFinNoDet automata, HashSet<String> cjtoEstados) throws Exception {
         objEstados.clear();
         estados.clear();
         grafo = new Grafo();
@@ -118,9 +118,9 @@ public class ManejaGrafo {
 
             //Añadir los estados al grafo
             for (String estado : estados) {
-                if (automata.getEstadosFinales().contains(estado)) {
+                if (automata.getEstadosFin().contains(estado)) {
                     objEstados.add(grafo.insertVertex(parent, null, estado, 100, 200, 50, 50, "ESTADOFINAL"));
-                } else if (automata.getEstadoInicial().equals(estado)) {
+                } else if (automata.getEstInicio().equals(estado)) {
                     objEstados.add(grafo.insertVertex(parent, null, estado, 100, 200, 50, 50, "ESTADOINICIAL"));
                 } else {
                     objEstados.add(grafo.insertVertex(parent, null, estado, 100, 200, 50, 50, "ESTADO"));
@@ -128,19 +128,19 @@ public class ManejaGrafo {
             }
             //Añadimos las transiciones que consumen simbolo
             if (!automata.getTransiciones().isEmpty()) {
-                for (TransicionAFND t : automata.getTransiciones()) {
-                    for (String estadoDestino : t.getDestinos()) {
-                        grafo.insertEdge(parent, null, t.getSimbolo(), objEstados.get(estados.indexOf(t.getOrigen())), objEstados.get(estados.indexOf(estadoDestino)), "rounded=1");
+                for (TransAutFinNDet t : automata.getTransiciones()) {
+                    for (String estadoDestino : t.getEstadosLlegada()) {
+                        grafo.insertEdge(parent, null, t.getSimboloTrans(), objEstados.get(estados.indexOf(t.getEstadoInicio())), objEstados.get(estados.indexOf(estadoDestino)), "rounded=1");
                     }
                 }
             }
 
             //Añadimos las transiciones lambda
-            if (!automata.getTransicionesL().isEmpty()) {
-                for (TransicionL tl : automata.getTransicionesL()) {    //Por cada transicion lambda
-                    for (String estadoDestino : tl.getDestinos()) //y por cada destino de esa T-L
+            if (!automata.getTransLamda().isEmpty()) {
+                for (TransLamda tl : automata.getTransLamda()) {    //Por cada transicion lambda
+                    for (String estadoDestino : tl.getEstadosLlegada()) //y por cada destino de esa T-L
                     {
-                        grafo.insertEdge(parent, null, "L", objEstados.get(estados.indexOf(tl.getOrigen())), objEstados.get(estados.indexOf(estadoDestino)), "rounded=1");
+                        grafo.insertEdge(parent, null, "L", objEstados.get(estados.indexOf(tl.getEstadoInicio())), objEstados.get(estados.indexOf(estadoDestino)), "rounded=1");
                     }
                 }
             }
@@ -244,7 +244,7 @@ public class ManejaGrafo {
      * @param estadosActivos
      * @return objeto mxGraphComponent para su representación gráfica
      */
-    public mxGraphComponent simularAFND(AFND automata, HashSet<String> cjtoEstados, HashSet<String> estadosActivos) {
+    public mxGraphComponent simularAFND(AutoFinNoDet automata, HashSet<String> cjtoEstados, HashSet<String> estadosActivos) {
         objEstados.clear();
         estados.clear();
         grafo = new Grafo();
@@ -253,9 +253,9 @@ public class ManejaGrafo {
 
             //Añadir los estados al grafo
             for (String estado : estados) {
-                if (automata.getEstadosFinales().contains(estado)) {
+                if (automata.getEstadosFin().contains(estado)) {
                     objEstados.add(grafo.insertVertex(parent, null, estado, 100, 200, 50, 50, "ESTADOFINAL"));
-                } else if (automata.getEstadoInicial().equals(estado)) {
+                } else if (automata.getEstInicio().equals(estado)) {
                     objEstados.add(grafo.insertVertex(parent, null, estado, 100, 200, 50, 50, "ESTADOINICIAL"));
                 } else {
                     objEstados.add(grafo.insertVertex(parent, null, estado, 100, 200, 50, 50, "ESTADO"));
@@ -269,19 +269,19 @@ public class ManejaGrafo {
 
             //Añadimos las transiciones que consumen simbolo
             if (!automata.getTransiciones().isEmpty()) {
-                for (TransicionAFND t : automata.getTransiciones()) {
-                    for (String estadoDestino : t.getDestinos()) {
-                        grafo.insertEdge(parent, null, t.getSimbolo(), objEstados.get(estados.indexOf(t.getOrigen())), objEstados.get(estados.indexOf(estadoDestino)), "rounded=1");
+                for (TransAutFinNDet t : automata.getTransiciones()) {
+                    for (String estadoDestino : t.getEstadosLlegada()) {
+                        grafo.insertEdge(parent, null, t.getSimboloTrans(), objEstados.get(estados.indexOf(t.getEstadoInicio())), objEstados.get(estados.indexOf(estadoDestino)), "rounded=1");
                     }
                 }
             }
 
             //Añadimos las transiciones lambda
-            if (!automata.getTransicionesL().isEmpty()) {
-                for (TransicionL tl : automata.getTransicionesL()) {    //Por cada transicion lambda
-                    for (String estadoDestino : tl.getDestinos()) //y por cada destino de esa T-L
+            if (!automata.getTransLamda().isEmpty()) {
+                for (TransLamda tl : automata.getTransLamda()) {    //Por cada transicion lambda
+                    for (String estadoDestino : tl.getEstadosLlegada()) //y por cada destino de esa T-L
                     {
-                        grafo.insertEdge(parent, null, "L", objEstados.get(estados.indexOf(tl.getOrigen())), objEstados.get(estados.indexOf(estadoDestino)), "rounded=1");
+                        grafo.insertEdge(parent, null, "L", objEstados.get(estados.indexOf(tl.getEstadoInicio())), objEstados.get(estados.indexOf(estadoDestino)), "rounded=1");
                     }
                 }
             }

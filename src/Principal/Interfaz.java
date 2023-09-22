@@ -1,23 +1,17 @@
 package Principal;
 
-import Automata.AFND;
+import Automata.AutoFinNoDet;
 import Automata.AFD;
 import Automata.TransicionAFD;
-import Automata.TransicionAFND;
-import Automata.TransicionL;
+import Automata.TransAutFinNDet;
+import Automata.TransLamda;
 import Grafo.ManejaGrafo;
-import java.io.File;
-import java.nio.file.Paths;
 import java.util.HashSet;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import com.mxgraph.swing.mxGraphComponent;
-import javax.swing.filechooser.FileFilter;
 import java.util.ArrayList;
-import java.util.Stack;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  * Clase Interfaz. Esta clase se encargará de darnos una visión gráfica del
@@ -26,7 +20,7 @@ import java.util.logging.Logger;
 public class Interfaz extends javax.swing.JFrame {
 
     private AFD afd = new AFD();
-    private AFND afnd = new AFND();
+    private AutoFinNoDet afnd = new AutoFinNoDet();
 
     private HashSet<String> cjtoEstados = new HashSet();
     private HashSet<String> cjtoSimbolos = new HashSet();
@@ -194,48 +188,206 @@ public class Interfaz extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jPnlPrincipal = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        textSimbolo = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        textEstado = new javax.swing.JTextField();
+        tipoAFD = new javax.swing.JRadioButton();
+        jLabel8 = new javax.swing.JLabel();
+        botonEstadosF = new javax.swing.JButton();
+        comboDestino = new javax.swing.JComboBox<>();
+        botonEliminarT = new javax.swing.JButton();
+        botonAddT = new javax.swing.JButton();
+        botonAddSimbolo = new javax.swing.JButton();
+        botonAddEstado = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        comboEstadoI = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        tipoAFND = new javax.swing.JRadioButton();
+        comboSimbolo = new javax.swing.JComboBox<>();
+        comboOrigen = new javax.swing.JComboBox<>();
+        textCadena = new javax.swing.JTextField();
+        botonSimular = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaTransicion = new javax.swing.JTable();
-        botonSimular = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        botonAddEstado = new javax.swing.JButton();
-        textEstado = new javax.swing.JTextField();
-        textSimbolo = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        comboOrigen = new javax.swing.JComboBox<>();
-        comboDestino = new javax.swing.JComboBox<>();
-        botonAddSimbolo = new javax.swing.JButton();
-        botonAddT = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        comboEstadoI = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        comboSimbolo = new javax.swing.JComboBox<>();
-        tipoAFD = new javax.swing.JRadioButton();
-        tipoAFND = new javax.swing.JRadioButton();
-        jLabel9 = new javax.swing.JLabel();
-        textCadena = new javax.swing.JTextField();
-        botonEliminarT = new javax.swing.JButton();
-        botonEstadosF = new javax.swing.JButton();
         labelEstadoI = new javax.swing.JLabel();
         labelEstadosF = new javax.swing.JLabel();
         botonEliminarSimbolo = new javax.swing.JButton();
         botonEliminarEstado = new javax.swing.JButton();
         botonDestinos = new javax.swing.JButton();
         botonLimpiar = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         scroll = new javax.swing.JScrollPane();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autómatas ");
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 51, 102));
+        setForeground(new java.awt.Color(0, 51, 102));
         setLocation(new java.awt.Point(0, 0));
+
+        jPnlPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        jPnlPrincipal.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel9.setFont(new java.awt.Font("Noto Serif CJK JP", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel9.setText("Elegir autómata");
+
+        textSimbolo.setBackground(new java.awt.Color(0, 102, 204));
+        textSimbolo.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        textSimbolo.setForeground(new java.awt.Color(255, 255, 255));
+        textSimbolo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textSimbolo.setText("1");
+
+        jLabel7.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel7.setText("Estado inicial");
+
+        textEstado.setBackground(new java.awt.Color(0, 102, 204));
+        textEstado.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        textEstado.setForeground(new java.awt.Color(255, 255, 255));
+        textEstado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textEstado.setText("q0");
+
+        buttonGroup1.add(tipoAFD);
+        tipoAFD.setFont(new java.awt.Font("Noto Sans CJK JP", 2, 14)); // NOI18N
+        tipoAFD.setForeground(new java.awt.Color(0, 102, 204));
+        tipoAFD.setSelected(true);
+        tipoAFD.setText("AFD");
+        tipoAFD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoAFDActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel8.setText("Estados finales");
+
+        botonEstadosF.setBackground(new java.awt.Color(0, 51, 102));
+        botonEstadosF.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 15)); // NOI18N
+        botonEstadosF.setForeground(new java.awt.Color(255, 255, 255));
+        botonEstadosF.setText("Estados");
+        botonEstadosF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEstadosFActionPerformed(evt);
+            }
+        });
+
+        comboDestino.setBackground(new java.awt.Color(0, 102, 204));
+        comboDestino.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        comboDestino.setForeground(new java.awt.Color(255, 255, 255));
+        comboDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "llegada" }));
+        comboDestino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboDestinoActionPerformed(evt);
+            }
+        });
+
+        botonEliminarT.setBackground(new java.awt.Color(0, 51, 102));
+        botonEliminarT.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 15)); // NOI18N
+        botonEliminarT.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminarT.setText("Eliminar Transiciones");
+        botonEliminarT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarTActionPerformed(evt);
+            }
+        });
+
+        botonAddT.setBackground(new java.awt.Color(0, 51, 102));
+        botonAddT.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 14)); // NOI18N
+        botonAddT.setForeground(new java.awt.Color(255, 255, 255));
+        botonAddT.setText("Crear");
+        botonAddT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAddTActionPerformed(evt);
+            }
+        });
+
+        botonAddSimbolo.setBackground(new java.awt.Color(0, 51, 102));
+        botonAddSimbolo.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        botonAddSimbolo.setForeground(new java.awt.Color(255, 255, 255));
+        botonAddSimbolo.setText("Crear");
+        botonAddSimbolo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAddSimboloActionPerformed(evt);
+            }
+        });
+
+        botonAddEstado.setBackground(new java.awt.Color(0, 51, 102));
+        botonAddEstado.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        botonAddEstado.setForeground(new java.awt.Color(255, 255, 255));
+        botonAddEstado.setText("Crear");
+        botonAddEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAddEstadoActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel3.setText("Creación de Estados");
+        jLabel3.setToolTipText("");
+
+        comboEstadoI.setBackground(new java.awt.Color(0, 102, 204));
+        comboEstadoI.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        comboEstadoI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboEstadoIActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel6.setText("Conjunto transiciones");
+
+        buttonGroup1.add(tipoAFND);
+        tipoAFND.setFont(new java.awt.Font("Noto Sans CJK JP", 2, 14)); // NOI18N
+        tipoAFND.setForeground(new java.awt.Color(0, 102, 204));
+        tipoAFND.setText("AFND");
+        tipoAFND.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoAFNDActionPerformed(evt);
+            }
+        });
+
+        comboSimbolo.setBackground(new java.awt.Color(0, 102, 204));
+        comboSimbolo.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        comboSimbolo.setForeground(new java.awt.Color(255, 255, 255));
+        comboSimbolo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Símbolo" }));
+
+        comboOrigen.setBackground(new java.awt.Color(0, 102, 204));
+        comboOrigen.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        comboOrigen.setForeground(new java.awt.Color(255, 255, 255));
+        comboOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "inicio" }));
+
+        textCadena.setBackground(new java.awt.Color(0, 102, 204));
+        textCadena.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 30)); // NOI18N
+        textCadena.setForeground(new java.awt.Color(255, 255, 255));
+        textCadena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCadenaActionPerformed(evt);
+            }
+        });
+
+        botonSimular.setBackground(new java.awt.Color(0, 51, 102));
+        botonSimular.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 14)); // NOI18N
+        botonSimular.setForeground(new java.awt.Color(255, 255, 255));
+        botonSimular.setText("Evaluar");
+        botonSimular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSimularActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        tablaTransicion.setFont(new java.awt.Font("Rockwell", 0, 20)); // NOI18N
+        tablaTransicion.setBackground(new java.awt.Color(0, 51, 102));
+        tablaTransicion.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 20)); // NOI18N
+        tablaTransicion.setForeground(new java.awt.Color(255, 255, 255));
         tablaTransicion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -267,133 +419,23 @@ public class Interfaz extends javax.swing.JFrame {
             tablaTransicion.getColumnModel().getColumn(0).setPreferredWidth(20);
         }
 
-        botonSimular.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        botonSimular.setText("Evaluar");
-        botonSimular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSimularActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 102));
         jLabel2.setText("Creación Símbolos de entrada");
 
-        jLabel3.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jLabel3.setText("Creación de Estados");
-        jLabel3.setToolTipText("");
-
-        botonAddEstado.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        botonAddEstado.setText("Crear");
-        botonAddEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAddEstadoActionPerformed(evt);
-            }
-        });
-
-        textEstado.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        textEstado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textEstado.setText("q0");
-
-        textSimbolo.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        textSimbolo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textSimbolo.setText("1");
-
-        jLabel6.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jLabel6.setText("Conjunto transiciones");
-
-        comboOrigen.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        comboOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "inicio" }));
-
-        comboDestino.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        comboDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "llegada" }));
-        comboDestino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboDestinoActionPerformed(evt);
-            }
-        });
-
-        botonAddSimbolo.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        botonAddSimbolo.setText("Crear");
-        botonAddSimbolo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAddSimboloActionPerformed(evt);
-            }
-        });
-
-        botonAddT.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        botonAddT.setText("Crear");
-        botonAddT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAddTActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jLabel7.setText("Estado inicial");
-
-        comboEstadoI.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        comboEstadoI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboEstadoIActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jLabel8.setText("Estados finales");
-
-        comboSimbolo.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        comboSimbolo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Símbolo" }));
-
-        buttonGroup1.add(tipoAFD);
-        tipoAFD.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        tipoAFD.setSelected(true);
-        tipoAFD.setText("AFD");
-        tipoAFD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipoAFDActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(tipoAFND);
-        tipoAFND.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        tipoAFND.setText("AFND");
-        tipoAFND.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipoAFNDActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jLabel9.setText("Elegir autómata");
-
-        textCadena.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
-        textCadena.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCadenaActionPerformed(evt);
-            }
-        });
-
-        botonEliminarT.setText("Eliminar Transiciones");
-        botonEliminarT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminarTActionPerformed(evt);
-            }
-        });
-
-        botonEstadosF.setText("Estados");
-        botonEstadosF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEstadosFActionPerformed(evt);
-            }
-        });
-
-        labelEstadoI.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        labelEstadoI.setBackground(new java.awt.Color(0, 51, 102));
+        labelEstadoI.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 12)); // NOI18N
+        labelEstadoI.setForeground(new java.awt.Color(0, 51, 102));
         labelEstadoI.setText("Estado inicio: SELECCIONAR");
 
-        labelEstadosF.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        labelEstadosF.setBackground(new java.awt.Color(0, 51, 102));
+        labelEstadosF.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 12)); // NOI18N
+        labelEstadosF.setForeground(new java.awt.Color(0, 51, 102));
         labelEstadosF.setText("Estados finales: SELECCIONAR");
 
-        botonEliminarSimbolo.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        botonEliminarSimbolo.setBackground(new java.awt.Color(0, 51, 102));
+        botonEliminarSimbolo.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        botonEliminarSimbolo.setForeground(new java.awt.Color(255, 255, 255));
         botonEliminarSimbolo.setText("Eliminar");
         botonEliminarSimbolo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -401,7 +443,9 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        botonEliminarEstado.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        botonEliminarEstado.setBackground(new java.awt.Color(0, 51, 102));
+        botonEliminarEstado.setFont(new java.awt.Font("Noto Sans CJK JP", 0, 14)); // NOI18N
+        botonEliminarEstado.setForeground(new java.awt.Color(255, 255, 255));
         botonEliminarEstado.setText("Eliminar");
         botonEliminarEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -409,6 +453,9 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        botonDestinos.setBackground(new java.awt.Color(0, 51, 102));
+        botonDestinos.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 15)); // NOI18N
+        botonDestinos.setForeground(new java.awt.Color(255, 255, 255));
         botonDestinos.setText("Llegadas");
         botonDestinos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -416,6 +463,9 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        botonLimpiar.setBackground(new java.awt.Color(0, 51, 102));
+        botonLimpiar.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 15)); // NOI18N
+        botonLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         botonLimpiar.setText("Reiniciar");
         botonLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -423,38 +473,34 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-
-        jLabel13.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        jLabel13.setText("Expresión a evaluar");
-
         scroll.setBackground(new java.awt.Color(255, 255, 255));
+        scroll.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        scroll.setForeground(new java.awt.Color(255, 255, 255));
         scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scroll.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(botonEliminarT, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        jLabel13.setFont(new java.awt.Font("Noto Sans CJK JP", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel13.setText("Expresión a evaluar");
+
+        jLabel11.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout jPnlPrincipalLayout = new javax.swing.GroupLayout(jPnlPrincipal);
+        jPnlPrincipal.setLayout(jPnlPrincipalLayout);
+        jPnlPrincipalLayout.setHorizontalGroup(
+            jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                        .addGap(435, 435, 435)
                         .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                 .addComponent(textCadena, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(botonSimular, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                 .addComponent(textEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botonAddEstado)
@@ -464,112 +510,144 @@ public class Interfaz extends javax.swing.JFrame {
                             .addComponent(jLabel13)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
+                            .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                                .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                         .addComponent(comboOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(comboSimbolo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel7))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
+                                .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                         .addComponent(botonEstadosF)
                                         .addGap(18, 18, 18)
                                         .addComponent(labelEstadosF))
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                         .addComponent(comboDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(botonDestinos)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(botonAddT))
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                         .addComponent(comboEstadoI, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(labelEstadoI))))
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                 .addComponent(textSimbolo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botonAddSimbolo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botonEliminarSimbolo)
                                 .addGap(60, 60, 60)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                         .addComponent(tipoAFD)
                                         .addGap(18, 18, 18)
                                         .addComponent(tipoAFND))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(143, 143, 143)
+                    .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                        .addGap(565, 565, 565)
                         .addComponent(botonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
+            .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                            .addGap(86, 86, 86)
+                            .addComponent(botonEliminarT, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(218, 218, 218)
+                    .addComponent(jLabel11)
+                    .addContainerGap(804, Short.MAX_VALUE)))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
+        jPnlPrincipalLayout.setVerticalGroup(
+            jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                        .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(textSimbolo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(botonAddSimbolo)
                                     .addComponent(botonEliminarSimbolo)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
+                            .addGroup(jPnlPrincipalLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(tipoAFD)
                                     .addComponent(tipoAFND))))
                         .addGap(13, 13, 13)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonAddEstado)
                             .addComponent(textEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonEliminarEstado))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(comboOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonAddT)
                             .addComponent(comboSimbolo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonDestinos))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(comboEstadoI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelEstadoI))
+                        .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelEstadoI, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7)
+                                .addComponent(comboEstadoI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(botonEstadosF)
-                            .addComponent(labelEstadosF))
+                        .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelEstadosF)
+                            .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8)
+                                .addComponent(botonEstadosF)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel13)
                         .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textCadena, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonSimular, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(scroll, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonEliminarT)
-                    .addComponent(botonLimpiar)
-                    .addComponent(jLabel11))
+                            .addComponent(botonSimular, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(botonLimpiar)
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPnlPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botonEliminarT)
+                        .addComponent(jLabel11))
+                    .addContainerGap(26, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPnlPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPnlPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("Automatas");
@@ -582,7 +660,7 @@ public class Interfaz extends javax.swing.JFrame {
             if (tipoAFD.isSelected()) {
                 afd.setEstadoInicial(comboEstadoI.getSelectedItem().toString());
             } else {
-                afnd.setEstadoInicial(comboEstadoI.getSelectedItem().toString());
+                afnd.setEstadoInicio(comboEstadoI.getSelectedItem().toString());
             }
             labelEstadoI.setText("Estado inicial: " + comboEstadoI.getSelectedItem().toString());
             actualizarGrafica();
@@ -610,7 +688,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_tipoAFDActionPerformed
 
     private void tipoAFNDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAFNDActionPerformed
-        this.afnd = new AFND(); //Reseteamos el AFND
+        this.afnd = new AutoFinNoDet(); //Reseteamos el AFND
         botonLimpiar.doClick(); //Limpiamos todo
         comboSimbolo.addItem("LAMBDA");
         botonAddT.setVisible(false);
@@ -643,7 +721,7 @@ public class Interfaz extends javax.swing.JFrame {
         if (tipoAFD.isSelected()) {
             afd.eliminarSimbolo(textSimbolo.getText().charAt(0)); //Elimina las transiciones que usan el simbolo
         } else {
-            afnd.eliminarSimbolo(textSimbolo.getText().charAt(0));
+            afnd.borrarSimbolo(textSimbolo.getText().charAt(0));
         }
         actualizarTabla();
     }//GEN-LAST:event_botonEliminarSimboloActionPerformed
@@ -658,7 +736,7 @@ public class Interfaz extends javax.swing.JFrame {
             comboDestino.removeItem(estado);
             afd.eliminarEstado(estado);
         } else {
-            afnd.eliminarEstado(estado);
+            afnd.borrarEstado(estado);
         }
         actualizarTabla();
         actualizarGrafica();
@@ -685,7 +763,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEliminarTActionPerformed
 
     private void botonEstadosFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEstadosFActionPerformed
-        panelEstados pE = new panelEstados();
+        PnlEstado pE = new PnlEstado();
         pE.setEstados(cjtoEstados);
 
         int res = JOptionPane.showConfirmDialog(null, pE,
@@ -695,7 +773,7 @@ public class Interfaz extends javax.swing.JFrame {
             if (tipoAFD.isSelected()) {
                 afd.setEstadosFinales(pE.getEstados());
             } else {
-                afnd.setEstadosFinales(pE.getEstados());
+                afnd.setEstadosDeFin(pE.getEstados());
             }
 
             labelEstadosF.setText("Estados finales: " + pE.getEstados());
@@ -705,7 +783,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEstadosFActionPerformed
 
     private void botonDestinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDestinosActionPerformed
-        panelEstados pE = new panelEstados();
+        PnlEstado pE = new PnlEstado();
         pE.setEstados(cjtoEstados);
 
         int res = JOptionPane.showConfirmDialog(null, pE,
@@ -714,12 +792,12 @@ public class Interfaz extends javax.swing.JFrame {
         if (res == JOptionPane.OK_OPTION) {
             if (comboSimbolo.getSelectedItem().equals("LAMBDA")) //Es una L-T             
             {
-                TransicionL lt = new TransicionL(comboOrigen.getSelectedItem().toString(), pE.getEstados());
-                afnd.agregarTransicionL(lt);
+                TransLamda lt = new TransLamda(comboOrigen.getSelectedItem().toString(), pE.getEstados());
+                afnd.aniadirTransLamda(lt);
                 System.out.println("AÑADIDA LAMBDA-T:" + lt);
             } else {
-                TransicionAFND t = new TransicionAFND(comboOrigen.getSelectedItem().toString(), comboSimbolo.getSelectedItem().toString().charAt(0), pE.getEstados());
-                afnd.agregarTransicion(t);
+                TransAutFinNDet t = new TransAutFinNDet(comboOrigen.getSelectedItem().toString(), comboSimbolo.getSelectedItem().toString().charAt(0), pE.getEstados());
+                afnd.aniadirTransicion(t);
                 System.out.println("AÑADIDA T: " + t);
             }
 
@@ -732,7 +810,7 @@ public class Interfaz extends javax.swing.JFrame {
         this.cjtoEstados.clear();
         this.cjtoSimbolos.clear();
         this.afd = new AFD();
-        this.afnd = new AFND();
+        this.afnd = new AutoFinNoDet();
       
         textCadena.setText("");
      
@@ -773,13 +851,13 @@ public class Interfaz extends javax.swing.JFrame {
                     this.agregarEstadoMuerto();
                 }
 
-                if (afd.reconocer(textCadena.getText())) {
+                if (afd.aceptarCadena(textCadena.getText())) {
                     JOptionPane.showConfirmDialog(rootPane, "CADENA RECONOCIDA", "RESULTADO DEL AUTOMATA", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showConfirmDialog(rootPane, "CADENA NO RECONOCIDA", "RESULTADO DEL AUTOMATA", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                if (afnd.reconocer(textCadena.getText())) {
+                if (afnd.aceptarCadena(textCadena.getText())) {
                     JOptionPane.showConfirmDialog(rootPane, "CADENA RECONOCIDA", "RESULTADO DEL AUTOMATA", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showConfirmDialog(rootPane, "CADENA NO RECONOCIDA", "RESULTADO DEL AUTOMATA", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
@@ -862,6 +940,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPnlPrincipal;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelEstadoI;
     private javax.swing.JLabel labelEstadosF;
