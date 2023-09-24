@@ -851,13 +851,13 @@ public class Interfaz extends javax.swing.JFrame {
                     this.agregarEstadoMuerto();
                 }
 
-                if (afd.aceptarCadena(textCadena.getText())) {
+                if (afd.Check(textCadena.getText())) {
                     JOptionPane.showConfirmDialog(rootPane, "CADENA RECONOCIDA", "RESULTADO DEL AUTOMATA", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showConfirmDialog(rootPane, "CADENA NO RECONOCIDA", "RESULTADO DEL AUTOMATA", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                if (afnd.aceptarCadena(textCadena.getText())) {
+                if (afnd.Check(textCadena.getText())) {
                     JOptionPane.showConfirmDialog(rootPane, "CADENA RECONOCIDA", "RESULTADO DEL AUTOMATA", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showConfirmDialog(rootPane, "CADENA NO RECONOCIDA", "RESULTADO DEL AUTOMATA", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);

@@ -6,16 +6,9 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 
-/**
- * Clase Grafo. Hereda de mxGraph.
- * @author Víctor M. Rodríguez y Fran J. Beltrán
- */
 public class Grafo extends mxGraph {
 
-    /**
-     * Crea el objeto grafo, que hereda de mxGraph y establece su configuración
-     * estética
-     */
+    //crea grafo
     public Grafo() {
         super();
 

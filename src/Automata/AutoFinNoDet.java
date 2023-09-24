@@ -120,7 +120,7 @@ public class AutoFinNoDet implements Cloneable, Proceso {
 
 
     //Regresa true sí el estado pasado en el parámetro es un estadoFinalo de Aceptación
-    public boolean esFin(String estado) {
+    public boolean CheckEF(String estado) {
         return this.estadosDeFin.contains(estado);
     }
 
@@ -129,7 +129,7 @@ public class AutoFinNoDet implements Cloneable, Proceso {
     //son estados finales o de aceptación
     public boolean esFin(HashSet<String> estadosAevaluar) {
         for (String estado : estadosAevaluar) {
-            if (this.esFin(estado)) {
+            if (this.CheckEF(estado)) {
                 return true;
             }
         }
@@ -181,7 +181,7 @@ public class AutoFinNoDet implements Cloneable, Proceso {
     //Sí el estado al que llega al leer el último simbolo de la cadena ingresada
     //es el estado final o de adaptación entonces la cadena es aceptada.
     @Override
-    public boolean aceptarCadena(String cadena) throws Exception {
+    public boolean Check(String cadena) throws Exception {
         //verificar estados de inicio y fin
         if (this.estadoDeInicio.equals("")) {
             throw new Exception("ERROR: indique el estado de INICIO");

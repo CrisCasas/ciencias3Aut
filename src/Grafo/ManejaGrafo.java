@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2020 victo
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package Grafo;
 
 import Automata.AFD;
@@ -29,11 +13,6 @@ import com.mxgraph.view.mxStylesheet;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/**
- * Clase ManejaGrafo. Se encarga de facilitar el uso del grafo.
- *
- * @author Víctor M. Rodríguez y Fran J. Beltrán
- */
 public class ManejaGrafo {
 
     private Grafo grafo = new Grafo();
@@ -42,14 +21,8 @@ public class ManejaGrafo {
     ArrayList<String> estados = new ArrayList<>();
     ArrayList<Object> objEstados = new ArrayList<>();
 
-    /**
-     * Genera la representación grafica del AFD
-     *
-     * @param automata Automata pasado por parametro
-     * @param cjtoEstados Conjunto de estados
-     * @return objeto mxGraphComponent para su representación gráfica
-     * @throws Exception
-     */
+    //Genera la representación grafica del AFD
+    
     public mxGraphComponent generarAFD(AFD automata, HashSet<String> cjtoEstados) throws Exception {
         objEstados.clear();
         estados.clear();
@@ -101,14 +74,8 @@ public class ManejaGrafo {
 
     }
 
-    /**
-     * Genera la representación gráfica del AFND
-     *
-     * @param automata Automata pasado por parametro
-     * @param cjtoEstados Conjunto de estados
-     * @return objeto mxGraphComponent para su representación gráfica
-     * @throws Exception
-     */
+    //Genera la representación gráfica del AFND
+    
     public mxGraphComponent generarAFND(AutoFinNoDet automata, HashSet<String> cjtoEstados) throws Exception {
         objEstados.clear();
         estados.clear();
@@ -170,16 +137,7 @@ public class ManejaGrafo {
         return new mxGraphComponent(grafo);
     }
 
-    /**
-     * Genera la representación gráfica del AFD dada una situación de estados
-     * activos
-     *
-     * @param automata
-     * @param cjtoEstados
-     * @param estadoActivo
-     * @return objeto mxGraphComponent para su representación gráfica
-     * @throws java.lang.Exception si algo sale mal, se lanzará
-     */
+    //Genera la representación gráfica del AFD dada una situación de estados activos
     public mxGraphComponent simularAFD(AFD automata, HashSet<String> cjtoEstados, String estadoActivo) throws Exception {
         objEstados.clear();
         estados.clear();
@@ -235,15 +193,7 @@ public class ManejaGrafo {
         return new mxGraphComponent(grafo);
     }
 
-    /**
-     * Genera la representación gráfica del AFND dada una situación de estados
-     * activos
-     *
-     * @param automata
-     * @param cjtoEstados
-     * @param estadosActivos
-     * @return objeto mxGraphComponent para su representación gráfica
-     */
+    //Genera la representación gráfica del AFND dada una situación de estados activos
     public mxGraphComponent simularAFND(AutoFinNoDet automata, HashSet<String> cjtoEstados, HashSet<String> estadosActivos) {
         objEstados.clear();
         estados.clear();
