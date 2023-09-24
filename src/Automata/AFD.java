@@ -3,7 +3,7 @@ package Automata;
 import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+// maneja la ligaca de afd
 public class AFD implements Cloneable, Proceso {
 
     private HashSet<String> estadosFinales;
