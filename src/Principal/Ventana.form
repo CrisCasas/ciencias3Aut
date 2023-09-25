@@ -81,25 +81,25 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="textCadena" min="-2" pref="349" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="botonSimular" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="btnEvaluar" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="textEstado" min="-2" pref="59" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonAddEstado" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAddEst" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonEliminarEstado" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnBorrarEst" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblConjTransiciones" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblSimbEnt" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblCreEst" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="comboOrigen" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cmbInicio" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="comboSimbolo" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cmbSimb" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -107,35 +107,35 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="botonEstadosF" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnEstFin" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="labelEstadosF" min="-2" max="-2" attributes="0"/>
+                                          <Component id="labelEstadosI" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="comboDestino" min="-2" pref="88" max="-2" attributes="0"/>
+                                          <Component id="cmbLlegada" min="-2" pref="88" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="botonDestinos" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnLlegadas" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="botonAddT" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnAddT" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="comboEstadoI" min="-2" pref="63" max="-2" attributes="0"/>
+                                          <Component id="cmbEstadoL" min="-2" pref="63" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="labelEstadoI" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblEstadoL" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="textSimbolo" min="-2" pref="59" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonAddSimbolo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAddSimb" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonEliminarSimbolo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnBorrarSimb" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="tipoAFD" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tipoAutFinDet" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="tipoAFND" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -145,7 +145,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="565" max="-2" attributes="0"/>
-                          <Component id="botonLimpiar" min="-2" pref="159" max="-2" attributes="0"/>
+                          <Component id="btnReiniciar" min="-2" pref="159" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="41" max="32767" attributes="0"/>
@@ -157,7 +157,7 @@
                           <Component id="jScrollPane1" min="-2" pref="409" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <EmptySpace min="86" pref="86" max="-2" attributes="0"/>
-                              <Component id="botonEliminarT" min="-2" pref="221" max="-2" attributes="0"/>
+                              <Component id="btnBorrarTrans" min="-2" pref="221" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
@@ -177,55 +177,55 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSimbEnt" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="textSimbolo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonAddSimbolo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonEliminarSimbolo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnAddSimb" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnBorrarSimb" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tipoAFD" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tipoAutFinDet" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="tipoAFND" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCreEst" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botonAddEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAddEst" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="textEstado" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonEliminarEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBorrarEst" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblConjTransiciones" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="comboOrigen" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="comboDestino" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonAddT" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="comboSimbolo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonDestinos" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbInicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbLlegada" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAddT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbSimb" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLlegadas" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="labelEstadoI" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEstadoL" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="comboEstadoI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cmbEstadoL" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="labelEstadosF" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelEstadosI" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="botonEstadosF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnEstFin" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -233,12 +233,12 @@
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="textCadena" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="botonSimular" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnEvaluar" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="botonLimpiar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnReiniciar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -247,7 +247,7 @@
                       <Component id="jScrollPane1" min="-2" pref="458" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botonEliminarT" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBorrarTrans" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="26" max="32767" attributes="0"/>
@@ -309,7 +309,7 @@
             <Property name="text" type="java.lang.String" value="q0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="tipoAFD">
+        <Component class="javax.swing.JRadioButton" name="tipoAutFinDet">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="buttonGroup1"/>
@@ -324,7 +324,7 @@
             <Property name="text" type="java.lang.String" value="AFD"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipoAFDActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipoAutFinDetActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -338,7 +338,7 @@
             <Property name="text" type="java.lang.String" value="Estados finales"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botonEstadosF">
+        <Component class="javax.swing.JButton" name="btnEstFin">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -352,10 +352,10 @@
             <Property name="text" type="java.lang.String" value="Estados"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEstadosFActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEstFinActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboDestino">
+        <Component class="javax.swing.JComboBox" name="cmbLlegada">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="66" red="0" type="rgb"/>
@@ -373,13 +373,13 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboDestinoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbLlegadaActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="botonEliminarT">
+        <Component class="javax.swing.JButton" name="btnBorrarTrans">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -393,10 +393,10 @@
             <Property name="text" type="java.lang.String" value="Eliminar Transiciones"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarTActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBorrarTransActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonAddT">
+        <Component class="javax.swing.JButton" name="btnAddT">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -410,10 +410,10 @@
             <Property name="text" type="java.lang.String" value="Crear"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAddTActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddTActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonAddSimbolo">
+        <Component class="javax.swing.JButton" name="btnAddSimb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -427,10 +427,10 @@
             <Property name="text" type="java.lang.String" value="Crear"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAddSimboloActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddSimbActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonAddEstado">
+        <Component class="javax.swing.JButton" name="btnAddEst">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -444,10 +444,10 @@
             <Property name="text" type="java.lang.String" value="Crear"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAddEstadoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddEstActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="lblCreEst">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Noto Sans CJK JP" size="14" style="1"/>
@@ -459,7 +459,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboEstadoI">
+        <Component class="javax.swing.JComboBox" name="cmbEstadoL">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="66" red="0" type="rgb"/>
@@ -472,13 +472,13 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboEstadoIActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbEstadoLActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="lblConjTransiciones">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Noto Sans CJK JP" size="14" style="1"/>
@@ -506,7 +506,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipoAFNDActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboSimbolo">
+        <Component class="javax.swing.JComboBox" name="cmbSimb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="66" red="0" type="rgb"/>
@@ -527,7 +527,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboOrigen">
+        <Component class="javax.swing.JComboBox" name="cmbInicio">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="66" red="0" type="rgb"/>
@@ -564,7 +564,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textCadenaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonSimular">
+        <Component class="javax.swing.JButton" name="btnEvaluar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -578,7 +578,7 @@
             <Property name="text" type="java.lang.String" value="Evaluar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSimularActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEvaluarActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -596,7 +596,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tablaTransicion">
+            <Component class="javax.swing.JTable" name="tablaDeTransicion">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="33" red="0" type="rgb"/>
@@ -632,7 +632,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lblSimbEnt">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Noto Sans CJK JP" size="14" style="1"/>
@@ -643,7 +643,7 @@
             <Property name="text" type="java.lang.String" value="Creaci&#xf3;n S&#xed;mbolos de entrada"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="labelEstadoI">
+        <Component class="javax.swing.JLabel" name="lblEstadoL">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -657,7 +657,7 @@
             <Property name="text" type="java.lang.String" value="Estado inicio: SELECCIONAR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="labelEstadosF">
+        <Component class="javax.swing.JLabel" name="labelEstadosI">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -671,7 +671,7 @@
             <Property name="text" type="java.lang.String" value="Estados finales: SELECCIONAR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botonEliminarSimbolo">
+        <Component class="javax.swing.JButton" name="btnBorrarSimb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -685,10 +685,10 @@
             <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarSimboloActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBorrarSimbActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonEliminarEstado">
+        <Component class="javax.swing.JButton" name="btnBorrarEst">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -702,10 +702,10 @@
             <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarEstadoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBorrarEstActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonDestinos">
+        <Component class="javax.swing.JButton" name="btnLlegadas">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -719,10 +719,10 @@
             <Property name="text" type="java.lang.String" value="Llegadas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonDestinosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLlegadasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonLimpiar">
+        <Component class="javax.swing.JButton" name="btnReiniciar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
@@ -736,7 +736,7 @@
             <Property name="text" type="java.lang.String" value="Reiniciar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonLimpiarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReiniciarActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="scroll">

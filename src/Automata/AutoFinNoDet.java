@@ -2,7 +2,7 @@ package Automata;
 
 import java.util.HashSet;
 
-public class AutoFinNoDet implements Cloneable, Proceso {
+public class AutoFinNoDet implements Cloneable, Procss {
 
     private HashSet<String> estadosDeFin;
     private String estadoDeInicio = "";

@@ -34,8 +34,9 @@ public class PnlEstado extends javax.swing.JPanel {
         pnlScrollEstados = new javax.swing.JScrollPane();
         listaEstados = new javax.swing.JList<>();
 
+        listaEstados.setBackground(new java.awt.Color(0, 51, 102));
         listaEstados.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
-        listaEstados.setForeground(new java.awt.Color(0, 0, 0));
+        listaEstados.setForeground(new java.awt.Color(255, 255, 255));
         pnlScrollEstados.setViewportView(listaEstados);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -49,10 +50,7 @@ public class PnlEstado extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlScrollEstados, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnlScrollEstados, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

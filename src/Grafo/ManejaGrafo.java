@@ -1,6 +1,6 @@
 package Grafo;
 
-import Automata.AFD;
+import Automata.AutoFinDet;
 import Automata.AutoFinNoDet;
 import Automata.TransicionAFD;
 import Automata.TransAutFinNDet;
@@ -23,7 +23,7 @@ public class ManejaGrafo {
 
     //Genera la representación grafica del AFD
     
-    public mxGraphComponent generarAFD(AFD automata, HashSet<String> cjtoEstados) throws Exception {
+    public mxGraphComponent generarAFD(AutoFinDet automata, HashSet<String> cjtoEstados) throws Exception {
         objEstados.clear();
         estados.clear();
         grafo = new Grafo();
@@ -138,7 +138,7 @@ public class ManejaGrafo {
     }
 
     //Genera la representación gráfica del AFD dada una situación de estados activos
-    public mxGraphComponent simularAFD(AFD automata, HashSet<String> cjtoEstados, String estadoActivo) throws Exception {
+    public mxGraphComponent simularAFD(AutoFinDet automata, HashSet<String> cjtoEstados, String estadoActivo) throws Exception {
         objEstados.clear();
         estados.clear();
         grafo = new Grafo();

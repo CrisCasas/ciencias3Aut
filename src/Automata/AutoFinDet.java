@@ -3,14 +3,14 @@ package Automata;
 import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-// maneja la ligaca de afd
-public class AFD implements Cloneable, Proceso {
+// maneja el automata Finito Determinista
+public class AutoFinDet implements Cloneable, Procss {
 
     private HashSet<String> estadosFinales;
     private String estadoInicial = "";
     private HashSet<TransicionAFD> transiciones;
 
-    public AFD() {
+    public AutoFinDet() {
         this.transiciones = new HashSet();
         this.estadosFinales = new HashSet();
     }
@@ -21,7 +21,7 @@ public class AFD implements Cloneable, Proceso {
     }
 
    //Agrega la transición pasada por parámetro al autómata
-    public void agregarTransicion(TransicionAFD trans) {
+    public void aniadirTransicion(TransicionAFD trans) {
         this.transiciones.add(trans);
     }
 
@@ -95,17 +95,9 @@ public class AFD implements Cloneable, Proceso {
         this.transiciones.remove(t);
     }
 
-    /**
-     * Simula el funcionamiento del autómata Recorre la cadena de entrada y
-     * evoluciona el estado actual según lo definido en las transiciones del
-     * autómata Si el estado al que evolucion al leer el último símbolo de
-     * entrada de la cadena es un estado final, la cadena es reconocida
-     *
-     * @param cadena Símbolos de entrada a reconocer por el autómata
-     * @return verdadero si la cadena es reconocida por el autómata (pertenece a
-     * su lenguaje formado)
-     * @throws java.lang.Exception Si el autómata no es válido
-     */
+    //simula como funciona el automata recorriendo utilizando  la cadena de entrada
+    //y como llega al siguiente estado de acuerdo a las transiciones
+    //si al llegar al último estado es de aceptación la cadena es reconocida
     @Override
     public boolean Check(String cadena) throws Exception {
         //CONTROL DE EXCEPCIONES
@@ -126,7 +118,8 @@ public class AFD implements Cloneable, Proceso {
             }
         }
 
-        return CheckEF(estado);
+        return CheckEF(estado);//retorna true en caso tal que la cadena es reconocida
+        //excepción sino funciona
     }
 
    //view automata txt
@@ -161,7 +154,7 @@ public class AFD implements Cloneable, Proceso {
     }
     // logica AFD
     public static void main(String[] args) {
-        AFD automata = new AFD();
+        AutoFinDet automata = new AutoFinDet();
 
         automata.estadosFinales.add("q1");
 
@@ -183,16 +176,16 @@ public class AFD implements Cloneable, Proceso {
                 System.out.println("NO RECONOCIDO");
             }
         } catch (Exception ex) {
-            Logger.getLogger(AFD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AutoFinDet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     //Devuelve una copia del autómata. Se crean nuevos objetos, no se clonan las referencias
     @Override
     public Object clone() throws CloneNotSupportedException {
-        AFD aux = null;
+        AutoFinDet aux = null;
         try {
-            aux = (AFD) super.clone(); //Hace una copia binaria de los objetos
+            aux = (AutoFinDet) super.clone(); //Hace una copia binaria de los objetos
         } catch (CloneNotSupportedException ex) {
             System.out.println("Clone no soportado");
         }
